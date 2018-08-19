@@ -1,0 +1,69 @@
+{
+  "name": "@stateform/iview",
+  "version": "0.1.0",
+  "main": "dist/stateform-iview.common.js",
+  "browser": "dist/stateform-iview.umd.min.js",
+  "files": [
+    "dist"
+  ],
+  "description": "StateForm implementation of iview",
+  "keywords": [
+    "stateform",
+    "vue",
+    "iview",
+    "form",
+    "generator"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "NODE_ENV=production vue-cli-service build --target lib --name stateform-iview src/lib/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {},
+  "peerDependencise": {
+    "iview": "^3.0.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "vue": "^2.5.17",
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "classnames": "^2.2.6",
+    "iview": "^3.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "vue/no-parsing-error": [
+        2,
+        {
+          "x-invalid-end-tag": false
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

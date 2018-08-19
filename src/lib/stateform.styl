@@ -1,0 +1,118 @@
+.sf-item
+  margin-bottom 24px
+  line-height 32px
+
+.sf-item--inline
+  display inline-block
+  float none
+
+
+.sf-item__label
+  text-transform capitalize
+
+/* red '*' */
+.sf-item__label-text--required:before
+  content "*"
+  display inline-block
+  margin-right 4px
+  line-height 1
+  font-family SimSun
+  font-size 12px
+  color #ed4014
+
+.sf-item__label:after
+  content: " ";
+  margin: 0 8px 0 2px;
+  position: relative;
+  top: -0.5px;
+
+.sf-item__error
+  position absolute
+  line-height 24px
+  color #ed4014
+.sf-item__help-icon
+  font-size 14px
+  height 16px 
+
+.sf-item-list__item
+  position relative
+  .sf-item-map
+    padding-left 20px
+    padding-top 10px
+    border 1px solid #dcdee2
+    border-left 5px solid #dcdee2
+
+.sf-item-list__remove
+  position absolute
+  top 50%
+  margin-top -11px
+  right -30px
+  font-size 22px
+  line-height 22px
+  color #000
+
+.sf-item--horizontal
+  .sf-item__label
+    text-align right
+  
+
+
+/* upload */
+.sf-upload-item
+  position relative
+  margin-top 5px
+  font-size 14px
+  padding 5px
+  border-radius 4px
+  transition background-color 0.3s
+
+.sf-upload-item:hover
+  background #e6f7ff
+  .sf-upload-item__remove
+    display block
+
+.sf-upload-item__icon
+  position absolute
+  color #888
+
+.sf-upload-item__name
+  display block
+  width 100%
+  text-overflow ellipsis
+  white-space nowrap
+
+.sf-upload-item__remove
+  display none
+  position absolute
+  top 5px
+  right 5px
+  cursor pointer
+  
+.sf-upload-item--error
+  .sf-upload-item__name
+  .sf-upload-item__icon
+  .sf-upload-item__remove
+    color red
+  .sf-upload-item__remove
+    display block
+
+
+.sf-upload-item__thumbnail
+  position absolute
+  height 40px
+  width 40px
+  top 0
+  left 0
+.sf-upload-item__thumbnail-img
+  max-height 100%
+  max-width 100%
+
+.sf-upload-list--text
+  .sf-upload-item__name
+    padding 0 20px
+
+.sf-upload-list--picture
+  .sf-upload-item
+    line-height 40px
+  .sf-upload-item__name
+    padding 0 20px 0 50px
