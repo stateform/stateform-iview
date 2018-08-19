@@ -13,6 +13,7 @@
     <DatePicker
       :type="type || 'date'"
       :format="format"
+      :placeholder="placeholder"
       v-model="inputValue"
       @input="updateValue"
       @on-clear="updateValue"

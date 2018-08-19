@@ -15,6 +15,7 @@
       :value="value"
       :disabled="disabled"
       :multiple="multiple"
+      :placeholder="placeholder"
       :clearable="true"
       @input="$emit('input', $event)"
     >

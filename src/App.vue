@@ -1,6 +1,6 @@
 <template>
   <div class="main-form">
-    <h1 class="main-form__title"> Test Form</h1>
+    <h1 class="main-form__title"> StateForm</h1>
     <StateForm 
       :state="formState"
       @input="handleInput"
