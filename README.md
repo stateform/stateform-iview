@@ -20,7 +20,7 @@ const StateForm = createStateForm({
 })
 
 // now you can use StateForm as a component in vue 
-// e.g., <StateForm state="yourFormState" @input="inputHandler" @submit="submitHandler" />
+// e.g., <StateForm :state="yourFormState" @input="inputHandler" @submit="submitHandler" />
 ```
 
 ## Playground  
