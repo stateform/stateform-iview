@@ -39,5 +39,5 @@ see [StateForm](https://github.com/stateform/StateForm-Specification)
 * test
 
 
-## Lisense  
+## License  
 MIT
