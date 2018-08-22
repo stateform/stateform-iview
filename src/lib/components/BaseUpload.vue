@@ -27,6 +27,7 @@
 <script>
 import FormItem from './FormItem.js'
 import UploadFileList from './UploadFileList.vue'
+let fileId = 0
 export default {
   mixins: [FormItem],
   components: {
@@ -56,7 +57,7 @@ export default {
     createFileItem(info, status = 'done') {
       info = typeof info === 'string' ? {url: info} : info
       let {uid, name, url, thumbUrl} =  info
-      uid = uid || ('file' + this.fileId++)
+      uid = uid || ('file' + fileId++)
       name = name || url
       return {uid, name, url, thumbUrl, status}
     },
