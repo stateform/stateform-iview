@@ -1,6 +1,6 @@
 {
   "name": "@stateform/iview",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "main": "dist/stateform-iview.common.js",
   "browser": "dist/stateform-iview.umd.min.js",
   "files": [

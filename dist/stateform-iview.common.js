@@ -1163,7 +1163,7 @@ __webpack_require__.d(components_namespaceObject, "Textarea", function() { retur
 __webpack_require__.d(components_namespaceObject, "TimePicker", function() { return TimePicker; });
 __webpack_require__.d(components_namespaceObject, "Radio", function() { return Radio; });
 __webpack_require__.d(components_namespaceObject, "Upload", function() { return components_Upload; });
-__webpack_require__.d(components_namespaceObject, "UploadMulti", function() { return components_UploadMulti; });
+__webpack_require__.d(components_namespaceObject, "UploadList", function() { return UploadList; });
 
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
@@ -2394,15 +2394,15 @@ var Radio_component = normalizeComponent(
 
 Radio_component.options.__file = "Radio.vue"
 /* harmony default export */ var Radio = (Radio_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b7c9fefc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/BaseUpload.vue?vue&type=template&id=c93ab064&
-var BaseUploadvue_type_template_id_c93ab064_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('FormItemLayout',{class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b7c9fefc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/BaseUpload.vue?vue&type=template&id=2b98aedb&
+var BaseUploadvue_type_template_id_2b98aedb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('FormItemLayout',{class:{
     'sf-item--upload': true,
     'ivu-form-item-error': _vm.error
     },attrs:{"layout":_vm.layout,"cols":_vm.cols,"label":_vm.label,"error":_vm.error,"required":_vm.required}},[_c('Upload',{attrs:{"action":"#","accept":_vm.accept,"before-upload":_vm.handleUpload,"multiple":_vm.isMultiple}},[_c('Button',{attrs:{"icon":"ios-cloud-upload-outline"}},[_vm._v("\n     "+_vm._s(_vm.uploadText || 'Select File')+"\n    ")])],1),_c('UploadFileList',{attrs:{"listType":_vm.listType,"fileList":_vm.fileList},on:{"on-remove":_vm.handleRemove}})],1)}
-var BaseUploadvue_type_template_id_c93ab064_staticRenderFns = []
+var BaseUploadvue_type_template_id_2b98aedb_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/components/BaseUpload.vue?vue&type=template&id=c93ab064&
+// CONCATENATED MODULE: ./src/lib/components/BaseUpload.vue?vue&type=template&id=2b98aedb&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
@@ -2568,6 +2568,7 @@ UploadFileList_component.options.__file = "UploadFileList.vue"
       return function (result) {
         Object.assign(fileItem, {
           status: result.status,
+          name: fileItem.name,
           value: result.value,
           url: result.url,
           thumbUrl: result.thumbUrl,
@@ -2624,8 +2625,8 @@ UploadFileList_component.options.__file = "UploadFileList.vue"
 
 var BaseUpload_component = normalizeComponent(
   components_BaseUploadvue_type_script_lang_js_,
-  BaseUploadvue_type_template_id_c93ab064_render,
-  BaseUploadvue_type_template_id_c93ab064_staticRenderFns,
+  BaseUploadvue_type_template_id_2b98aedb_render,
+  BaseUploadvue_type_template_id_2b98aedb_staticRenderFns,
   false,
   null,
   null,
@@ -2648,9 +2649,9 @@ BaseUpload_component.options.__file = "BaseUpload.vue"
     }
   }
 });
-// CONCATENATED MODULE: ./src/lib/components/UploadMulti.js
+// CONCATENATED MODULE: ./src/lib/components/UploadList.js
 
-/* harmony default export */ var components_UploadMulti = ({
+/* harmony default export */ var UploadList = ({
   extends: BaseUpload,
   data: function data() {
     return {
@@ -2813,7 +2814,7 @@ function createStateForm(_ref) {
     }
   };
   var UploadMulti = {
-    extends: components_UploadMulti,
+    extends: /* Cannot get final name for export "UploadMulti" in "./src/lib/components/index.js" (known exports: , known reexports: BoolCheck Checkbox DatePicker DateTimePicker Form Input InputNumber List Map Select Switch Textarea TimePicker Radio Upload UploadList) */ undefined,
     methods: {
       onUpload: upload.handleUpload,
       onRemove: upload.handleRemove
