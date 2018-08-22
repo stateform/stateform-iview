@@ -13,7 +13,7 @@ import Textarea from './Textarea.vue'
 import TimePicker from './TimePicker.vue'
 import Radio from './Radio.vue'
 import Upload from './Upload.js'
-import UploadMulti from './UploadMulti.js'
+import UploadList from './UploadList.js'
 
 
 export {
@@ -32,5 +32,5 @@ export {
   TimePicker,
   Radio,
   Upload,
-  UploadMulti
+  UploadList
 }

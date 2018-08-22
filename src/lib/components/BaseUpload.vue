@@ -64,6 +64,7 @@ export default {
       return (result) => {
         Object.assign(fileItem, {
           status: result.status,
+          name: fileItem.name,
           value: result.value,
           url: result.url,
           thumbUrl: result.thumbUrl,
