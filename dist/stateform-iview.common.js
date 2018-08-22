@@ -1163,7 +1163,7 @@ __webpack_require__.d(components_namespaceObject, "Textarea", function() { retur
 __webpack_require__.d(components_namespaceObject, "TimePicker", function() { return TimePicker; });
 __webpack_require__.d(components_namespaceObject, "Radio", function() { return Radio; });
 __webpack_require__.d(components_namespaceObject, "Upload", function() { return components_Upload; });
-__webpack_require__.d(components_namespaceObject, "UploadList", function() { return UploadList; });
+__webpack_require__.d(components_namespaceObject, "UploadList", function() { return components_UploadList; });
 
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
@@ -2651,7 +2651,7 @@ BaseUpload_component.options.__file = "BaseUpload.vue"
 });
 // CONCATENATED MODULE: ./src/lib/components/UploadList.js
 
-/* harmony default export */ var UploadList = ({
+/* harmony default export */ var components_UploadList = ({
   extends: BaseUpload,
   data: function data() {
     return {
@@ -2801,11 +2801,12 @@ StateForm_component.options.__file = "StateForm.vue"
 
 
 
-function createStateForm(_ref) {
-  var _ref$upload = _ref.upload,
-      upload = _ref$upload === void 0 ? {} : _ref$upload,
-      _ref$components = _ref.components,
-      components = _ref$components === void 0 ? {} : _ref$components;
+function createStateForm() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var _options$upload = options.upload,
+      upload = _options$upload === void 0 ? {} : _options$upload,
+      _options$components = options.components,
+      components = _options$components === void 0 ? {} : _options$components;
   var Upload = {
     extends: components_Upload,
     methods: {
@@ -2813,8 +2814,8 @@ function createStateForm(_ref) {
       onRemove: upload.handleRemove
     }
   };
-  var UploadMulti = {
-    extends: /* Cannot get final name for export "UploadMulti" in "./src/lib/components/index.js" (known exports: , known reexports: BoolCheck Checkbox DatePicker DateTimePicker Form Input InputNumber List Map Select Switch Textarea TimePicker Radio Upload UploadList) */ undefined,
+  var UploadList = {
+    extends: components_UploadList,
     methods: {
       onUpload: upload.handleUpload,
       onRemove: upload.handleRemove
@@ -2823,7 +2824,7 @@ function createStateForm(_ref) {
   var finalComponents = {};
   [components_namespaceObject, {
     Upload: Upload,
-    UploadMulti: UploadMulti
+    UploadList: UploadList
   }, components].forEach(function (item) {
     Object.keys(item).forEach(function (key) {
       finalComponents['StateForm' + key] = item[key];
