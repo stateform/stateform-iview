@@ -12,8 +12,8 @@ export default function createStateForm(options = {}) {
     }
   }
 
-  const UploadMulti = {
-    extends: builtInComponents.UploadMulti,
+  const UploadList = {
+    extends: builtInComponents.UploadList,
     methods: {
       onUpload: upload.handleUpload,
       onRemove: upload.handleRemove
@@ -21,7 +21,7 @@ export default function createStateForm(options = {}) {
   }
 
   const finalComponents = {};
-  [builtInComponents, {Upload, UploadMulti}, components].forEach(item => {
+  [builtInComponents, {Upload, UploadList}, components].forEach(item => {
     Object.keys(item).forEach(key => {
       finalComponents['StateForm' + key] = item[key]
     })
