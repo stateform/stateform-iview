@@ -1,8 +1,9 @@
 import * as builtInComponents from './components'
 import './stateform.styl'
 import BaseStateForm from './StateForm'
+import FormItemLayout from './components/FormItemLayout'
 
-export default function createStateForm(options = {}) {
+function createStateForm(options = {}) {
   const {upload = {}, components = {}} = options
   const Upload = {
     extends: builtInComponents.Upload,
@@ -33,3 +34,6 @@ export default function createStateForm(options = {}) {
 
   return StateForm
 }
+
+export default createStateForm
+export {createStateForm, FormItemLayout}
