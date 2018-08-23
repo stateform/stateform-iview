@@ -1,12 +1,13 @@
 {
   "name": "@stateform/iview",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "dist/stateform-iview.common.js",
   "browser": "dist/stateform-iview.umd.min.js",
   "files": [
     "dist"
   ],
   "description": "StateForm implementation of iview",
+  "repository": "https://github.com/stateform/stateform-iview",
   "keywords": [
     "stateform",
     "vue",

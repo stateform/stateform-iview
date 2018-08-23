@@ -1305,7 +1305,11 @@ function _typeof(obj) {
       return h(external_iview_["Col"], {
         attrs: {
           span: cols.item.span,
-          offset: cols.item.offset
+          offset: cols.item.offset,
+          xs: cols.xsItem,
+          sm: cols.smItem,
+          md: cols.mdItem,
+          lg: cols.lgItem
         },
         "class": Object.assign({
           'sf-item': true,
@@ -2802,6 +2806,8 @@ StateForm_component.options.__file = "StateForm.vue"
 
 
 
+
+
 function createStateForm() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var _options$upload = options.upload,
@@ -2837,10 +2843,15 @@ function createStateForm() {
   };
   return StateForm;
 }
+
+/* harmony default export */ var lib = (createStateForm);
+
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "createStateForm", function() { return createStateForm; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "FormItemLayout", function() { return FormItemLayout; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (createStateForm);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (lib);
 
 
 
