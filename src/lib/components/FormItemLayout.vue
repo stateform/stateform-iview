@@ -93,6 +93,10 @@ export default {
         <Col
           span={cols.item.span}
           offset={cols.item.offset}
+          xs={cols.xsItem}
+          sm={cols.smItem}
+          md={cols.mdItem}
+          lg={cols.lgItem}
           class={Object.assign({
             'sf-item': true,
             'sf-item--inline': true,
