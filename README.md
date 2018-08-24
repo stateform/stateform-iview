@@ -63,7 +63,7 @@ interface StateFormOptions {
   },
   // you are able to use custom components in StateForm
   components?: {
-    [key: string]: React.Component;
+    [key: string]: VueComponent;
   }
 }
 

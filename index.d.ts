@@ -1,6 +1,6 @@
 import * as StateForm from './stateformInterface'
 
-declare module "StateFormAntd" {
+declare module "StateFormIView" {
 
   type VueComponent = any
 
