@@ -63,7 +63,7 @@ interface StateFormOptions {
   },
   // you are able to use custom components in StateForm
   components?: {
-    [key: string]: VueComponent;
+    [key: string]: Vue;
   }
 }
 
@@ -95,7 +95,7 @@ interface FormItemLayoutProps {
   error?: string;
   [key: string]: any;
 }
-interface FormItemLayout extends React.Component<FormItemLayoutProps> {
+interface FormItemLayout extends Vue {
 }
 ```
 Here is an example to define a custom component 
