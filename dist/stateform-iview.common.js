@@ -2649,7 +2649,7 @@ BaseUpload_component.options.__file = "BaseUpload.vue"
     handleUpload: function handleUpload(file) {
       var currentFile = this.createFileItem(file, 'uploading');
       this.fileList = [currentFile];
-      this.onUpload(file, this.createUploadCallback(currentFile));
+      this.onUpload(file, this.$props, this.createUploadCallback(currentFile));
       return false;
     }
   }
@@ -2667,7 +2667,7 @@ BaseUpload_component.options.__file = "BaseUpload.vue"
     handleUpload: function handleUpload(file) {
       var currentFile = this.createFileItem(file, 'uploading');
       this.fileList.push(currentFile);
-      this.onUpload(file, this.createUploadCallback(currentFile));
+      this.onUpload(file, this.$props, this.createUploadCallback(currentFile));
       return false;
     }
   }

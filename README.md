@@ -7,7 +7,7 @@ import "@stateform/iview/dist/stateform-iview.css"
 
 const StateForm = createStateForm({
   upload: {
-    handleUpload(file, cb) {
+    handleUpload(file, props, cb) {
       // You should upload the file by yourself,
       // and call `cb` when the upload is completed
       cb({
@@ -58,7 +58,7 @@ type createStateForm = (options?: StateFormOptions) => StateForm
 interface StateFormOptions {
   // if you use Upload component, you should implement handleUpload and handleRemove 
   upload?: {
-    handleUpload: (file: File, cb: UploadCallback) => void;
+    handleUpload: (file: File, props: any, cb: UploadCallback) => void;
     handleRemove: (file: FileItem) => void;
   },
   // you are able to use custom components in StateForm

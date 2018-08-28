@@ -5,7 +5,7 @@ export default {
     handleUpload(file) {
       const currentFile = this.createFileItem(file, 'uploading')
       this.fileList = [currentFile]
-      this.onUpload(file, this.createUploadCallback(currentFile))
+      this.onUpload(file, this.$props, this.createUploadCallback(currentFile))
       return false
     }
   }

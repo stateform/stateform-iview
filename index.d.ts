@@ -10,7 +10,7 @@ declare module "StateFormIView" {
 
   export interface StateFormOptions {
     upload?: {
-      handleUpload: (file: File, cb: UploadCallback) => void;
+      handleUpload: (file: File, props: any, cb: UploadCallback) => void;
       handleRemove: (file: FileItem) => void;
     },
     components?: {
