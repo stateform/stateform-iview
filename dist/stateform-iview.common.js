@@ -2808,24 +2808,30 @@ StateForm_component.options.__file = "StateForm.vue"
 
 
 
+function noop() {}
+
 function createStateForm() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var _options$upload = options.upload,
       upload = _options$upload === void 0 ? {} : _options$upload,
       _options$components = options.components,
       components = _options$components === void 0 ? {} : _options$components;
+  var _upload$handleUpload = upload.handleUpload,
+      handleUpload = _upload$handleUpload === void 0 ? noop : _upload$handleUpload,
+      _upload$handleRemove = upload.handleRemove,
+      handleRemove = _upload$handleRemove === void 0 ? noop : _upload$handleRemove;
   var Upload = {
     extends: components_Upload,
     methods: {
-      onUpload: upload.handleUpload,
-      onRemove: upload.handleRemove
+      onUpload: handleUpload,
+      onRemove: handleRemove
     }
   };
   var UploadList = {
     extends: components_UploadList,
     methods: {
-      onUpload: upload.handleUpload,
-      onRemove: upload.handleRemove
+      onUpload: handleUpload,
+      onRemove: handleRemove
     }
   };
   var finalComponents = {};

@@ -3,21 +3,24 @@ import './stateform.styl'
 import BaseStateForm from './StateForm'
 import FormItemLayout from './components/FormItemLayout'
 
+function noop(){}
+
 function createStateForm(options = {}) {
   const {upload = {}, components = {}} = options
+  const {handleUpload = noop, handleRemove = noop} = upload
   const Upload = {
     extends: builtInComponents.Upload,
     methods: {
-      onUpload: upload.handleUpload,
-      onRemove: upload.handleRemove
+      onUpload: handleUpload,
+      onRemove: handleRemove
     }
   }
 
   const UploadList = {
     extends: builtInComponents.UploadList,
     methods: {
-      onUpload: upload.handleUpload,
-      onRemove: upload.handleRemove
+      onUpload: handleUpload,
+      onRemove: handleRemove
     }
   }
 
