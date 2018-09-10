@@ -13,7 +13,7 @@
             v-if="footer.showSubmit === true"
             @click="$emit('submit')" 
             type="primary"
-            :disabled="submit.disableSubmit"
+            :disabled="footer.disableSubmit"
           >
             {{submit.submitText || 'Submit'}}
           </Button>
@@ -21,7 +21,7 @@
             class="sf-footer__reset"
             v-if="submit.showReset === true"
             @click="$emit('reset')" 
-            :disabled="submit.disableReset"
+            :disabled="footer.disableReset"
           >
             {{submit.resetText || 'Reset'}}
           </Button>
