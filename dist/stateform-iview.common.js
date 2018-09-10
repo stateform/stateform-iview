@@ -1666,12 +1666,12 @@ BaseDatePicker_component.options.__file = "BaseDatePicker.vue"
     };
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b7c9fefc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Form.vue?vue&type=template&id=e6939f18&
-var Formvue_type_template_id_e6939f18_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Row',{staticClass:"sf-item--Form"},[_c('Form',[_vm._t("default"),(_vm.footer)?_c('FormItemLayout',{staticClass:"sf-footer",attrs:{"layout":_vm.layout,"cols":_vm.footer.cols || _vm.cols}},[(_vm.footer.showSubmit === true)?_c('Button',{staticClass:"sf-footer__submit",attrs:{"type":"primary","disabled":_vm.submit.disableSubmit},on:{"click":function($event){_vm.$emit('submit')}}},[_vm._v("\n          "+_vm._s(_vm.submit.submitText || 'Submit')+"\n        ")]):_vm._e(),(_vm.submit.showReset === true)?_c('Button',{staticClass:"sf-footer__reset",attrs:{"disabled":_vm.submit.disableReset},on:{"click":function($event){_vm.$emit('reset')}}},[_vm._v("\n          "+_vm._s(_vm.submit.resetText || 'Reset')+"\n        ")]):_vm._e()],1):_vm._e()],2)],1)}
-var Formvue_type_template_id_e6939f18_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b7c9fefc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Form.vue?vue&type=template&id=b36a0ad8&
+var Formvue_type_template_id_b36a0ad8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Row',{staticClass:"sf-item--Form"},[_c('Form',[_vm._t("default"),(_vm.footer)?_c('FormItemLayout',{staticClass:"sf-footer",attrs:{"layout":_vm.layout,"cols":_vm.footer.cols || _vm.cols}},[(_vm.footer.showSubmit === true)?_c('Button',{staticClass:"sf-footer__submit",attrs:{"type":"primary","disabled":_vm.footer.disableSubmit},on:{"click":function($event){_vm.$emit('submit')}}},[_vm._v("\n          "+_vm._s(_vm.submit.submitText || 'Submit')+"\n        ")]):_vm._e(),(_vm.submit.showReset === true)?_c('Button',{staticClass:"sf-footer__reset",attrs:{"disabled":_vm.footer.disableReset},on:{"click":function($event){_vm.$emit('reset')}}},[_vm._v("\n          "+_vm._s(_vm.submit.resetText || 'Reset')+"\n        ")]):_vm._e()],1):_vm._e()],2)],1)}
+var Formvue_type_template_id_b36a0ad8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/components/Form.vue?vue&type=template&id=e6939f18&
+// CONCATENATED MODULE: ./src/lib/components/Form.vue?vue&type=template&id=b36a0ad8&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Form.vue?vue&type=script&lang=js&
 //
@@ -1729,8 +1729,8 @@ var Formvue_type_template_id_e6939f18_staticRenderFns = []
 
 var Form_component = normalizeComponent(
   components_Formvue_type_script_lang_js_,
-  Formvue_type_template_id_e6939f18_render,
-  Formvue_type_template_id_e6939f18_staticRenderFns,
+  Formvue_type_template_id_b36a0ad8_render,
+  Formvue_type_template_id_b36a0ad8_staticRenderFns,
   false,
   null,
   null,
