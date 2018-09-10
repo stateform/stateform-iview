@@ -1,15 +1,7 @@
 <template>
-  <FormItemLayout
-    class="sf-item-map"
-    :layout="layout"
-    :cols="cols"
-    :label="label"
-    :help="help"
-    :required="required"
-    :error="error"
-  >
+  <div>
     <slot name="default"></slot>
-  </FormItemLayout>
+  </div>
 </template>
 
 <script>

@@ -1,31 +1,18 @@
 <template>
-  <FormItemLayout
-    :class="{
-      'sf-item--input': true,
-      'ivu-form-item-error': error
-      }"
-    :layout="layout"
-    :cols="cols"
-    :label="label"
-    :help="help"
-    :error="error"
-    :required="required"
+  <RadioGroup
+    :value="value"
+    disabled="disabled"
+    @input="$emit('input', $event)"
   >
-    <RadioGroup
-      :value="value"
-      disabled="disabled"
-      @input="$emit('input', $event)"
+    <Radio 
+      v-for="(val, key) in option" 
+      :key="val" 
+      :label="val"
+      :disabled="disabledItems[key]"
     >
-      <Radio 
-        v-for="(val, key) in option" 
-        :key="val" 
-        :label="val"
-        :disabled="disabledItems[key]"
-      >
-        {{ key }}
-      </Radio>
-    </RadioGroup>
-  </FormItemLayout>
+      {{ key }}
+    </Radio>
+  </RadioGroup>
 </template>
 
 <script>

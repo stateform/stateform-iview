@@ -1,10 +1,14 @@
 <script>
+import FormItemLayout from './components/FormItemLayout.vue'
 export default {
   components: {},
-  props: ['state', 'showSubmit', 'submitText'],
+  props: ['state'],
   methods: {
     handleSubmit() {
       this.$emit('submit')
+    },
+    handleReset() {
+      this.$emit('reset')
     },
     handleInput(path) {
       return (value, index) => {
@@ -12,37 +16,68 @@ export default {
       }
     },
     renderFormItem(state) {
-      let children = state.children
-      if(children) {
-        children = children.map((item) => {
-          if (item == null) {
-            return 
-          }
-          if (!item.cols) {
-            item.cols = this.cols
-          }
-          if (!item.layout) {
-            item.layout = this.layout
-          }
-          return this.renderFormItem(item)
-        })
-      }
-      const itemClass = state.class
       const path = state.path
+      const customElement = this.customElements[path]
+      let finalComponent 
+      let component
+      let children
+      if (customElement) {
+        finalComponent = customElement
+        component = 'Custom'
+      } else {
+        component = state.component
+        finalComponent = 'StateForm' + component
+        children = state.children
+        if(children) {
+          children = children.map((item) => {
+            if (item == null) {
+              return 
+            }
+            if (!item.cols) {
+              item.cols = this.cols
+            }
+            if (!item.layout) {
+              item.layout = this.layout
+            }
+            return this.renderFormItem(item)
+          })
+        }
+      }
+      const h = this.$createElement
+      const itemClass = Object.assign({
+        ['sf-item--' + component]: true,
+        'ivu-form-item-error': state.error
+      }, state.class)
       const props = Object.assign({}, state)
       const on = {
         input: this.handleInput(path)
       }
+
       if (path === '/') {
-        children = children.concat(this.$slots.default)
         on.submit = this.handleSubmit
+        on.reset = this.handleReset
+        return h(finalComponent, {
+          key: path,
+          class: itemClass,
+          props,
+          on,
+        }, children)
+      } else {
+        return h(FormItemLayout, {
+            key: path,
+            class: itemClass,
+            props,
+            on,
+          }, [
+            component === 'Custom'
+              ? finalComponent
+              : h(finalComponent, {
+                  props,
+                  on
+                }, children)
+          ]
+        )
       }
-      return this.$createElement('StateForm' + state.component, {
-        key: path,
-        class: itemClass,
-        props,
-        on
-      }, children)
     }
   },
   render() {
@@ -56,6 +91,12 @@ export default {
     if (state.component) {
       state.component = 'Form'
     }
+    const customElements = {}
+    const defaultSlots = this.$slots.default || []
+    defaultSlots.forEach((item) => {
+      customElements[item.key] = item
+    })
+    this.customElements = customElements
     return this.renderFormItem(state)
   }
 }

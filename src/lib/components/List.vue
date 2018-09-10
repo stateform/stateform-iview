@@ -35,15 +35,7 @@ export default {
       )
     })
     return (
-        <FormItemLayout
-          class="sf-item--list"
-          layout={layout}
-          cols={cols}
-          help={help}
-          label={label}
-          required={required}
-          error={error}
-        >
+      <div>
           { children }
           { isAddable !== false && (
             <Button
@@ -55,7 +47,7 @@ export default {
               { addText || 'Add Item'}
             </Button>
           )}
-        </FormItemLayout>
+      </div>
     )
   }
 }

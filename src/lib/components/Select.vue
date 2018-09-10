@@ -1,34 +1,21 @@
 <template>
-  <FormItemLayout
-    :class="{
-      'sf-item--input': true,
-      'ivu-form-item-error': error
-      }"
-    :layout="layout"
-    :cols="cols"
-    :help="help"
-    :label="label"
-    :error="error"
-    :required="required"
+  <Select
+    :value="value"
+    :disabled="disabled"
+    :multiple="multiple"
+    :placeholder="placeholder"
+    :clearable="true"
+    @input="$emit('input', $event)"
   >
-    <Select
-      :value="value"
-      :disabled="disabled"
-      :multiple="multiple"
-      :placeholder="placeholder"
-      :clearable="true"
-      @input="$emit('input', $event)"
+    <Option 
+      v-for="(val, key) in option" 
+      :key="val" 
+      :value="val"
+      :disabled="disabledItems[key]"
     >
-      <Option 
-        v-for="(val, key) in option" 
-        :key="val" 
-        :value="val"
-        :disabled="disabledItems[key]"
-      >
-        {{ key }}
-      </Option>
-    </Select>
-  </FormItemLayout>
+      {{ key }}
+    </Option>
+  </Select>
 </template>
 
 <script>

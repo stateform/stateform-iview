@@ -2,12 +2,25 @@
   <Row class="sf-item--form">
     <Form>
         <slot name="default"></slot>
-        <FormItemLayout v-if="showSubmit !== false"
-          class="sf--submit"
-          :layout='layout'
-          :cols='submitCols || cols'
-        > 
-          <Button @click="$emit('submit')">{{submitText || 'Submit'}}</Button>
+        <FormItemLayout 
+          v-if="submit && submit.showSubmit !== false"
+          :layout="layout"
+          :cols="submit.cols || cols"
+        >
+          <Button 
+            class="sf-submit"
+            @click="$emit('submit')" 
+            type="primary"
+            :disabled="submit.disabled">
+              {{submit.submitText || 'Submit'}}
+          </Button>
+          <Button 
+            class="sf-reset"
+            v-if="submit.showReset === true"
+            @click="$emit('reset')" 
+          >
+            {{submit.resetText || 'Reset'}}
+          </Button>
         </FormItemLayout>
     </Form>
   </Row>
@@ -23,6 +36,6 @@ export default {
     Button,
     FormItemLayout
   },
-  props: ['showSubmit','submitCols', 'submitText', 'layout', 'cols']
+  props: ['layout', 'cols', 'submit'],
 }
 </script>

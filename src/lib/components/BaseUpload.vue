@@ -1,15 +1,5 @@
 <template>
-  <FormItemLayout
-    :class="{
-      'sf-item--upload': true,
-      'ivu-form-item-error': error
-      }"
-    :layout="layout"
-    :cols="cols"
-    :label="label"
-    :error="error"
-    :required="required"
-  >
+  <div>
     <Upload 
       action="#"
       :accept="accept"
@@ -21,7 +11,7 @@
       </Button>
     </Upload>
     <UploadFileList :listType="listType"  :fileList="fileList" @on-remove="handleRemove" />
-  </FormItemLayout>
+  </div>
 </template>
 
 <script>

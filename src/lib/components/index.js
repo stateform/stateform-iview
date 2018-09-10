@@ -15,6 +15,8 @@ import Radio from './Radio.vue'
 import Upload from './Upload.js'
 import UploadList from './UploadList.js'
 
+import Custom from './Custom'
+
 
 export {
   BoolCheck,
@@ -32,5 +34,6 @@ export {
   TimePicker,
   Radio,
   Upload,
-  UploadList
+  UploadList,
+  Custom
 }

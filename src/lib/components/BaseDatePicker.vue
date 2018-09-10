@@ -1,25 +1,13 @@
 <template>
-  <FormItemLayout
-    :class="{
-      'sf-item--datepicker': true,
-      'ivu-form-item-error': error
-      }"
-    :layout="layout"
-    :cols="cols"
-    :label="label"
-    :error="error"
-    :required="required"
+  <DatePicker
+    :type="type || 'date'"
+    :format="format"
+    :placeholder="placeholder"
+    v-model="inputValue"
+    @input="updateValue"
+    @on-clear="updateValue"
   >
-    <DatePicker
-      :type="type || 'date'"
-      :format="format"
-      :placeholder="placeholder"
-      v-model="inputValue"
-      @input="updateValue"
-      @on-clear="updateValue"
-    >
-    </DatePicker>
-  </FormItemLayout>
+  </DatePicker>
 </template>
 
 <script>

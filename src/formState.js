@@ -6,21 +6,29 @@ export default {
     label: 5,
     wrapper: 18
   },
-  submitCols: {
-    label: {
-      span: 3,
-      offset: 2
+  submit: {
+    cols: {
+      label: {
+        span: 3,
+        offset: 2
+      },
+      wrapper: 19
     },
-    wrapper: 19
+    submitText: 'Submit Text',
   },
-  submitText: 'Submit Text',
-  showSubmit: true,
   children: [
     {
       path: '/boolcheck',
       component: 'BoolCheck',
       label: 'BoolCheck',
       content: 'Agree to <a href="#">link</a>'
+    },
+    {
+      path: '/custom',
+      component: 'Custom',
+      label: 'Custom',
+      value: 5,
+      step: 10
     },
     {
       path: '/checkbox',
@@ -270,6 +278,6 @@ export default {
       uploadText: 'Upload',
       label: 'UploadList',
       required: true,
-    }
+    },
   ]
 }

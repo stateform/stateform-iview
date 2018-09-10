@@ -2,11 +2,13 @@
   <div class="main-form">
     <h1 class="main-form__title"> StateForm</h1>
     <StateForm 
+      ref="form"
       :state="formState"
       @input="handleInput"
       @submit="handleSubmit"
+      @reset="handleReset"
     >
-      <button>Custom Submit</button>
+      <Slider key="/custom" @input="$refs.form.$emit('input', '/custom', $event)"></Slider>
     </StateForm>
   </div>
 
@@ -14,11 +16,14 @@
 
 <script>
 import 'iview/dist/styles/iview.css'
+import {Slider, Button} from 'iview'
+
 import createStateForm from './lib'
 import formState from './formState'
+
 const StateForm = createStateForm({
   upload: {
-    handleUpload: (file, cb) => {
+    handleUpload: (file, props, cb) => {
       setTimeout(() => {
         const result = {}
         if (Math.random() > 0.5) {
@@ -48,11 +53,13 @@ const StateForm = createStateForm({
 })
 export default {
   components: {
-    StateForm
+    StateForm,
+    Slider,
+    Button
   },
   data() {
     return {
-      formState
+      formState,
     }
   },
   methods: {
@@ -63,6 +70,9 @@ export default {
     handleSubmit() {
       // eslint-disable-next-line
       console.log('submit')
+    },
+    handleReset() {
+      console.log('reset')
     }
   }
 }
