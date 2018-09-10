@@ -78,7 +78,8 @@ export default {
         <div class={Object.assign({
           'sf-item': true,
           'sf-item--vertical': true,
-          'sf-item--error': error
+          'sf-item--error': error,
+          'ivu-form-item-error': error
         }, props.class)}>
           <Row>
             {Label}
@@ -100,7 +101,8 @@ export default {
           class={Object.assign({
             'sf-item': true,
             'sf-item--inline': true,
-            'sf-item--error': error
+            'sf-item--error': error,
+            'ivu-form-item-error': error
           }, props.class)}
         >
           {Label}
@@ -113,7 +115,8 @@ export default {
           class={Object.assign({
             'sf-item': true,
             'sf-item--horizontal': true,
-            'sf-item--error': error
+            'sf-item--error': error,
+            'ivu-form-item-error': error
           }, props.class)}
         >
           {Label}

@@ -45,8 +45,7 @@ export default {
       }
       const h = this.$createElement
       const itemClass = Object.assign({
-        ['sf-item--' + component]: true,
-        'ivu-form-item-error': state.error
+        ['sf-item--' + component]: true
       }, state.class)
       const props = Object.assign({}, state)
       const on = {
