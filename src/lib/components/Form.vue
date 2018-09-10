@@ -15,15 +15,15 @@
             type="primary"
             :disabled="footer.disableSubmit"
           >
-            {{submit.submitText || 'Submit'}}
+            {{footer.submitText || 'Submit'}}
           </Button>
           <Button 
             class="sf-footer__reset"
-            v-if="submit.showReset === true"
+            v-if="footer.showReset === true"
             @click="$emit('reset')" 
             :disabled="footer.disableReset"
           >
-            {{submit.resetText || 'Reset'}}
+            {{footer.resetText || 'Reset'}}
           </Button>
         </FormItemLayout>
     </Form>

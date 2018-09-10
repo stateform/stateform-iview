@@ -14,6 +14,7 @@ export default {
       },
       wrapper: 19
     },
+    showSubmit: true,
     submitText: 'Submit Text',
   },
   children: [
