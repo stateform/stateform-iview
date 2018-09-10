@@ -6,7 +6,7 @@ export default {
     label: 5,
     wrapper: 18
   },
-  submit: {
+  footer: {
     cols: {
       label: {
         span: 3,
