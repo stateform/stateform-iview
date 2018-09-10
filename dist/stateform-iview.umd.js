@@ -1173,7 +1173,6 @@ __webpack_require__.d(components_namespaceObject, "TimePicker", function() { ret
 __webpack_require__.d(components_namespaceObject, "Radio", function() { return Radio; });
 __webpack_require__.d(components_namespaceObject, "Upload", function() { return components_Upload; });
 __webpack_require__.d(components_namespaceObject, "UploadList", function() { return components_UploadList; });
-__webpack_require__.d(components_namespaceObject, "Custom", function() { return Custom; });
 
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
@@ -1305,7 +1304,8 @@ function _typeof(obj) {
         "class": Object.assign({
           'sf-item': true,
           'sf-item--vertical': true,
-          'sf-item--error': error
+          'sf-item--error': error,
+          'ivu-form-item-error': error
         }, props.class)
       }, [h(external_iview_["Row"], [Label]), h(external_iview_["Row"], [Wrapper])]);
     } else if (layout === 'inline') {
@@ -1321,7 +1321,8 @@ function _typeof(obj) {
         "class": Object.assign({
           'sf-item': true,
           'sf-item--inline': true,
-          'sf-item--error': error
+          'sf-item--error': error,
+          'ivu-form-item-error': error
         }, props.class)
       }, [Label, Wrapper]);
     } else {
@@ -1329,7 +1330,8 @@ function _typeof(obj) {
         "class": Object.assign({
           'sf-item': true,
           'sf-item--horizontal': true,
-          'sf-item--error': error
+          'sf-item--error': error,
+          'ivu-form-item-error': error
         }, props.class)
       }, [Label, Wrapper]);
     }
@@ -2502,58 +2504,7 @@ BaseUpload_component.options.__file = "BaseUpload.vue"
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/components/Custom.vue?vue&type=script&lang=js&
-
-/* harmony default export */ var Customvue_type_script_lang_js_ = ({
-  props: ['allProps', 'value'],
-  methods: {
-    handleInput: function handleInput(value, index) {
-      this.$emit('input', value, index);
-    }
-  },
-  render: function render(h) {
-    var props = this.allProps;
-    var children = this.$slots.default;
-    var vnode = children[0];
-    var componentOptions = vnode.componentOptions;
-    var listeners = componentOptions.listeners || {};
-
-    if (!listeners.input) {
-      listeners.input = this.handleInput;
-    } else {
-      listeners['form-input'] = this.handleInput;
-    }
-
-    componentOptions.listeners = listeners;
-    Object.assign(componentOptions.propsData, props);
-    return vnode;
-  }
-});
-// CONCATENATED MODULE: ./src/lib/components/Custom.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Customvue_type_script_lang_js_ = (Customvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/lib/components/Custom.vue
-var Custom_render, Custom_staticRenderFns
-
-
-
-
-/* normalize component */
-
-var Custom_component = normalizeComponent(
-  components_Customvue_type_script_lang_js_,
-  Custom_render,
-  Custom_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-Custom_component.options.__file = "Custom.vue"
-/* harmony default export */ var Custom = (Custom_component.exports);
 // CONCATENATED MODULE: ./src/lib/components/index.js
-
 
 
 
@@ -2612,16 +2563,20 @@ function _defineProperty(obj, key, value) {
       };
     },
     renderFormItem: function renderFormItem(state) {
-      var _this2 = this,
-          _Object$assign;
+      var _this2 = this;
 
-      var component = state.component;
       var path = state.path;
+      var customElement = this.customElements[path];
+      var finalComponent;
+      var component;
       var children;
 
-      if (component === 'Custom') {
-        children = [this.customElements[path]];
+      if (customElement) {
+        finalComponent = customElement;
+        component = 'Custom';
       } else {
+        component = state.component;
+        finalComponent = 'StateForm' + component;
         children = state.children;
 
         if (children) {
@@ -2644,17 +2599,16 @@ function _defineProperty(obj, key, value) {
       }
 
       var h = this.$createElement;
-      var itemClass = Object.assign((_Object$assign = {}, _defineProperty(_Object$assign, 'sf-item--' + component, true), _defineProperty(_Object$assign, 'ivu-form-item-error', state.error), _Object$assign), state.class);
+      var itemClass = Object.assign(_defineProperty({}, 'sf-item--' + component, true), state.class);
       var props = Object.assign({}, state);
       var on = {
         input: this.handleInput(path)
       };
-      var finalComponentName = 'StateForm' + component;
 
       if (path === '/') {
         on.submit = this.handleSubmit;
         on.reset = this.handleReset;
-        return h(finalComponentName, {
+        return h(finalComponent, {
           key: path,
           class: itemClass,
           props: props,
@@ -2666,10 +2620,8 @@ function _defineProperty(obj, key, value) {
           class: itemClass,
           props: props,
           on: on
-        }, [h(finalComponentName, {
-          props: component === 'Custom' ? {
-            allProps: props
-          } : props,
+        }, [component === 'Custom' ? finalComponent : h(finalComponent, {
+          props: props,
           on: on
         }, children)]);
       }
