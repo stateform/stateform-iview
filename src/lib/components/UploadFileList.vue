@@ -1,5 +1,5 @@
 <template>
-  <div :class="'sf-upload-list sf-upload-list--' + listType">
+  <div :class="'sf-upload-list sf-upload-list--' + (listType || 'text')">
     <div 
       v-for="(item, index) in fileList" 
       :key="index"
