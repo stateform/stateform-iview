@@ -44,9 +44,17 @@ export default {
         }
       }
       const h = this.$createElement
-      const itemClass = Object.assign({
+      let customClass = state.class
+      let itemClass = {
         ['sf-item--' + component]: true
-      }, state.class)
+      }
+      if (customClass) {
+        if (typeof customClass === 'string') {
+          itemClass[customClass] = true
+        } else {
+          Object.assign(itemClass, customClass)
+        }
+      }
       const props = Object.assign({}, state)
       const on = {
         input: this.handleInput(path)
