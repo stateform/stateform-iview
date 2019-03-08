@@ -1,6 +1,6 @@
 {
   "name": "@stateform/iview",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "main": "dist/stateform-iview.common.js",
   "browser": "dist/stateform-iview.umd.min.js",
   "files": [
@@ -18,7 +18,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "NODE_ENV=production vue-cli-service build --target lib --name stateform-iview src/lib/index.js",
+    "build": "vue-cli-service --mode production build --target lib --name stateform-iview src/lib/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {},
@@ -27,14 +27,14 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "vue": "^2.5.17",
-    "@vue/cli-plugin-babel": "^3.0.0",
-    "@vue/cli-plugin-eslint": "^3.0.0",
-    "@vue/cli-service": "^3.0.0",
+    "@vue/cli-plugin-babel": "^3.4.1",
+    "@vue/cli-plugin-eslint": "^3.4.1",
+    "@vue/cli-service": "^3.4.1",
     "classnames": "^2.2.6",
     "iview": "^3.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
